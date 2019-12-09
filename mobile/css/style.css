@@ -327,10 +327,19 @@ input[type=submit]{
 .innerwear .list::after {
 	clear: both;
 }
+.innerwear .list ul {
+	margin: 0 auto;
+	width: 75%;
+	height: auto;
+}
 .innerwear .list li {
-	float: left;
-	margin-left: 20px;
 	margin-top: 20px;
+}
+.innerwear .list li:nth-child(2n+1){
+	float: left;
+}
+.innerwear .list li:nth-child(2n+2){
+	float: right;
 }
 .innerwear .list li img {
 	width: 130px;
@@ -387,13 +396,21 @@ input[type=submit]{
 .kids .list::after {
 	clear: both;
 }
-.kids .list li {
-	float: left;
-	margin-left: 20px;
-	margin-top: 20px;
-	width: 130px;
+.kids .list ul {
+	margin: 0 auto;
+	width: 75%;
+	height: auto;
 }
-.innerwear .list li img {
+.kids .list li {
+	margin-top: 20px;
+}
+.kids .list li:nth-child(2n+1){
+	float: left;
+}
+.kids .list li:nth-child(2n+2){
+	float: right;
+}
+.kids .list li img {
 	width: 130px;
 }
 .kids .list dl {
