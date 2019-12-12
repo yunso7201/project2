@@ -37,38 +37,47 @@ body.static {
 }
 /* keyvisual */
 .keyvisual {
-	position: absolute;
+	position: relative;
 	width: 100%;
-	height: 100%;
+	margin-top: 0;
 	overflow: hidden;
 }
-.keyvisual ul {
-	position: absolute;
-	left: 0;
-	top: 0;
+.keyvisual .gallery {
+	position: relative;
 	width: 300%;
-	height: 100%;
 }
-.keyvisual li {
+.keyvisual .gallery li {
 	float: left;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
 }
-#start .keyvisual li:nth-child(1){
-	background: url(../images/keyvisual1.jpg) center top;
+.keyvisual li.item1{
+	background: url(../images/keyvisual1.jpg) center center;
 	background-size: cover;
 }
-#start .keyvisual li:nth-child(2){
-	background: url(../images/keyvisual2.jpg) center top;
+.keyvisual li.item2{
+	background: url(../images/keyvisual2.jpg) center center;
 	background-size: cover;
 }
-#start .keyvisual li:nth-child(3){
-	background: url(../images/keyvisual3.jpg) center top;
+.keyvisual li.item3{
+	background: url(../images/keyvisual3.jpg) center center;
 	background-size: cover;
 }
-#start .keyvisual li:nth-child(4){
-	background: url(../images/keyvisual1.jpg) center top;
-	background-size: cover;
+/* btn */
+#start .keyvisual .direction_nav li {
+	position: absolute;
+	top: 50%;
+	z-index: 12;
+	margin-top: -20px;
+	width: 20px;
+}
+#start .keyvisual .direction_nav li.left {
+	left: 20px;
+}
+#start .keyvisual .direction_nav li.right {
+	right: 20px;
+}
+#start .keyvisual .direction_nav li img {
+	max-width: 100%;
 }
 /* header */
 #header {
@@ -222,31 +231,38 @@ body.static {
 .best::after {
 	clear: both;
 }
-.best > .list {
-	overflow-x: auto;
+.best > .slide_track {
+	position: relative;
+	width: auto;
+	height: 225px;
 	margin-top: 20px;
+	overflow: hidden;
 }
-.best > .list > ul {
+.best > .slide_track > .slide {
+	position: absolute;
+	left: 0;
 	width: 900px;
+	transition: left 0.4s;
 }
-.best > .list > ul > li {
+.best > .slide_track > .slide > li {
 	float: left;
 	margin-left: 20px;
+	width: 130px
 }
-.best .list li img {
+.best .slide_track li img {
 	width: 130px;
 }
-.best .list li dl {
+.best .slide_track li dl {
 	margin-top: 10px;
 	font-size: 0.75em;
 }
-.best .list li dl dd {
+.best .slide_track li dl dd {
 	margin-top: 5px;
 }
-.best .list ul ul {
+.best .slide_track ul ul {
 	margin-top: 5px;
 }
-.best .list ul ul li {
+.best .slide_track ul ul li {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -254,41 +270,41 @@ body.static {
 	overflow: hidden;
 }
 /* color1 */
-.best .list ul .color1 li:nth-child(1) {
+.best .slide_track ul .color1 li:nth-child(1) {
 	background-color: #ffe95b;
 }
-.best .list ul .color1 li:nth-child(2) {
+.best .slide_track ul .color1 li:nth-child(2) {
 	background-color: #d6d6d6;
 }
 /* color2 */
-.best .list ul .color2 li:nth-child(1),
-.best .list ul .color3 li:nth-child(2),
-.best .list ul .color4 li:nth-child(1),
-.best .list ul .color5 li:nth-child(1),
-.best .list ul .color6 li:nth-child(2){
+.best .slide_track ul .color2 li:nth-child(1),
+.best .slide_track ul .color3 li:nth-child(2),
+.best .slide_track ul .color4 li:nth-child(1),
+.best .slide_track ul .color5 li:nth-child(1),
+.best .slide_track ul .color6 li:nth-child(2){
 	background-color: #000;
 }
-.best .list ul .color2 li:nth-child(2),
-.best .list ul .color3 li:nth-child(1),
-.best .list ul .color6 li:nth-child(1) {
+.best .slide_track ul .color2 li:nth-child(2),
+.best .slide_track ul .color3 li:nth-child(1),
+.best .slide_track ul .color6 li:nth-child(1) {
 	background-color: #002a65;
 }
-.best .list ul .color2 li:nth-child(3),
-.best .list ul .color4 li:nth-child(4) {
+.best .slide_track ul .color2 li:nth-child(3),
+.best .slide_track ul .color4 li:nth-child(4) {
 	background-color: #fff;
 }
 /* color3 */
-.best .list ul .color3 li:nth-child(3),
-.best .list ul .color5 li:nth-child(2),
-.best .list ul .color6 li:nth-child(3) {
+.best .slide_track ul .color3 li:nth-child(3),
+.best .slide_track ul .color5 li:nth-child(2),
+.best .slide_track ul .color6 li:nth-child(3) {
 	background-color: #d7cac0;
 }
 /* color4 */
-.best .list ul .color4 li:nth-child(2){
+.best .slide_track ul .color4 li:nth-child(2){
 	background-color: #f09b2c;
 }
-.best .list ul .color4 li:nth-child(3),
-.best .list ul .color5 li:nth-child(3){
+.best .slide_track ul .color4 li:nth-child(3),
+.best .slide_track ul .color5 li:nth-child(3){
 	background-color: #cc3333;
 }
 /* new */
@@ -306,11 +322,12 @@ body.static {
 	font-weight: 700;
 }
 .new .btn {
-	margin-top: 10px;
+	margin-top: 20px;
 }
-input[type=submit]{
+.new .btn a{
 	padding: 5px 10px;
 	font-weight: 700;
+	font-size: 14px;
 	border: 1px solid #000;
 	background-color: #fff;
 }
@@ -358,15 +375,20 @@ input[type=submit]{
 .me h5 {
 	margin-left: 20px;
 }
-.me .cont {
+.me .cont_wrap {
+	position: relative;
 	width: 100%;
-	overflow-x: auto;
+	height: 120px;
+	overflow: hidden;
 	padding-bottom: 10px;
 }
-.me ul {
+.me .cont_wrap .cont {
+	position: absolute;
+	left: 0;
 	width: 880px;
 	margin-left: 10px;
 	margin-top: 10px;
+	transition: left 0.4s;
 }
 .me ul::before,
 .me ul::after {
@@ -378,10 +400,11 @@ input[type=submit]{
 }
 .me li {
 	float: left;
+	width: 100px;
 	margin-left: 10px;
 }
 .me li img {
-	width: 100px;
+	max-width: 100%;
 }
 /* kids */
 .kids {
@@ -435,55 +458,59 @@ input[type=submit]{
 	font-size: 0.75em;
 	color: #707070;
 }
-.now .cont .main {
+.now .now_cont .main {
 	position: relative;
 	margin-top: 20px;
 }
-.now .cont .main img {
+.now .now_cont .main img {
 	width: 250px;
 }
-.now .cont .main .text {
+.now .now_cont .main .text {
 	position: absolute;
 	right: 20px;
 	top: 40px;
 }
-.now .cont .main .text span {
+.now .now_cont .main .text span {
 	font-size: 0.75em;
 }
-.now .cont .sub {
+.now .now_cont .sub_wrap {
 	position: relative;
+	width: auto;
+	height: 220px;
 	margin-top: -50px;
 	margin-left: 50px;
 	padding: 10px 0;
 	text-align: center;
+	overflow: hidden;
 	background-color: #eee;
 }
-.now .cont .sub {
-	overflow-x: auto;
-}
-.now .cont .sub::before,
-.now .cont .sub::after {
+.now .now_cont .sub_wrap::before,
+.now .now_cont .sub_wrap::after {
 	content: "";
 	display: block;
 }
-.now .cont .sub::after {
+.now .now_cont .sub_wrap::after {
 	clear: both;
 }
-.now .cont .sub ul {
+.now .now_cont .sub_wrap .sub {
+	position: absolute;
+	left: 0;
 	width: 420px;
+	transition: left 0.4s;
 }
-.now .cont .sub li {
+.now .now_cont .sub_wrap li {
 	float: left;
+	width: 130px;
 	margin-left: 10px;
 }
-.now .cont .sub li img {
-	width: 130px;
+.now .now_cont .sub_wrap li img {
+	max-width: 100%;
 }
-.now .cont .sub li dl {
+.now .now_cont .sub_wrap li dl {
 	margin-top: 10px;
 	font-size: 0.75em;
 }
-.now .cont .sub li dl dd {
+.now .now_cont .sub_wrap li dl dd {
 	margin-top: 5px;
 }
 /* footer */

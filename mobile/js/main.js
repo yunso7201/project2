@@ -27,25 +27,9 @@ $(function(){
 		}
 	});
 
-	var n=0;
-	var pos=0;
+	$(".keyvisual").mobileDragEvent2({total: 3});
 
-	setInterval(function(){
-		if(n < 3){
-			n=n+1;
-		}
-		else{
-			n=0;
-		}
-		// console.log(n);
-
-		pos=-1*n*100;
-		$(".keyvisual ul").animate({"left" : pos+"%"}, 300, function(){
-			if(n == 3){
-				n=0;
-				pos=0;
-				$(".keyvisual ul").animate({"left" : 0}, 0);
-			}
-		});
-	}, 3000);
+	$(".slide").mobileDragEvent5({total: 6, bannerw: 150});
+	$(".cont").mobileDragEvent5({total: 8, bannerw: 110});
+	$(".sub").mobileDragEvent5({total: 3, bannerw: 160});
 });

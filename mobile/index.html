@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile.event2.js"></script>
+<script src="js/jquery.mobile.event5.js"></script>
 <script src="js/main.js"></script>
 </head>
 
@@ -89,19 +91,22 @@
 		</nav>
 		<div class="dim"></div>
 		<div class="keyvisual">
-			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+			<ul class="gallery">
+				<li class="item1"></li>
+				<li class="item2"></li>
+				<li class="item3"></li>
+			</ul>
+			<ul class="direction_nav">
+				<li class="left"><a href="" title="left"><img src="images/btn_left.png" alt="btn left"></a></li>
+				<li class="right"><a href="" title="right"><img src="images/btn_right.png" alt="btn right"></a></li>
 			</ul>
 		</div>
 	</section>
 	<section id="intro">
 		<div class="best">
 			<h3>BEST</h3>
-			<div class="list">
-				<ul>
+			<div class="slide_track">
+				<ul class="slide">
 					<li>
 						<a href="">
 							<img src="images/best1.jpg" alt="best1">
@@ -208,7 +213,7 @@
 				</ul>
 			</div>
 			<div class="btn">
-				<input type="submit" value="더보기">
+				<a href="">더보기</a>
 			</div>
 		</div>
 		<div class="innerwear">
@@ -258,8 +263,8 @@
 		</div>
 		<div class="me">
 			<h5>고객님을 위한 맞춤 상품</h5>
-			<div class="cont">
-				<ul>
+			<div class="cont_wrap">
+				<ul class="cont">
 					<li><a href=""><img src="images/me1.jpg" alt="me1"></a></li>
 					<li><a href=""><img src="images/me2.jpg" alt="me2"></a></li>
 					<li><a href=""><img src="images/me3.jpg" alt="me3"></a></li>
@@ -321,7 +326,7 @@
 				<h3>FILA NOW</h3>
 				<div class="more"><a href="">더보기+</a></div>
 			</div>
-			<div class="cont">
+			<div class="now_cont">
 				<div class="main">
 					<img src="images/now.jpg" alt="now">
 					<div class="text">
@@ -329,8 +334,8 @@
 						<span>FILA의<br>스테디 셀러인<br>DRIFTER<br>19FW FUR 버전</span>
 					</div>
 				</div>
-				<div class="sub">
-					<ul>
+				<div class="sub_wrap">
+					<ul class="sub">
 						<li>
 							<a href="">
 								<img src="images/now1.jpg" alt="now1">
